@@ -44,7 +44,6 @@ export default function GeneratePage() {
                 throw new Error("No image data received");
             }
         } catch (error: any) {
-            console.error("Error generating image:", error);
             alert(error.message || "An unexpected error occurred. Please try again.");
         } finally {
             setIsGenerating(false);

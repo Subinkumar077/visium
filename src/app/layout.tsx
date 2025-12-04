@@ -10,6 +10,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Visium - AI Image Generator",
   description: "Create amazing images with AI instantly.",
+  icons: {
+    icon: "/images/letter-v.png",
+  },
 };
 
 export default function RootLayout({

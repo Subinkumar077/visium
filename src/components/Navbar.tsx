@@ -27,8 +27,8 @@ export default function Navbar() {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                    ? "bg-white/80 backdrop-blur-md border-b border-gray-100 py-4"
-                    : "bg-transparent py-6"
+                ? "bg-white/80 backdrop-blur-md border-b border-gray-100 py-4"
+                : "bg-transparent py-6"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,12 +55,6 @@ export default function Navbar() {
 
                     {/* Desktop Buttons */}
                     <div className="hidden md:flex items-center gap-4">
-                        <Link
-                            href="/docs"
-                            className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-                        >
-                            Docs
-                        </Link>
                         <Link
                             href="/generate"
                             className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-full transition-all shadow-lg shadow-indigo-600/20 hover:shadow-indigo-600/40"
@@ -100,13 +94,6 @@ export default function Navbar() {
                                 </Link>
                             ))}
                             <div className="pt-4 flex flex-col gap-3 border-t border-gray-100">
-                                <Link
-                                    href="/docs"
-                                    onClick={() => setIsOpen(false)}
-                                    className="block text-base font-medium text-gray-600 hover:text-gray-900"
-                                >
-                                    Docs
-                                </Link>
                                 <Link
                                     href="/generate"
                                     onClick={() => setIsOpen(false)}

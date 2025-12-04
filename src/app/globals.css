@@ -5,21 +5,91 @@
 
   --color-primary: #000000;
   --color-accent: #4F46E5;
+
   --color-background: #FFFFFF;
-  --color-background-secondary: #F9FAFB;
+  --color-background-secondary: #F8F9FF;
+
   --color-heading: #111827;
-  --color-body: #4B5563;
-  --color-badge-red: #EF4444;
-  --color-badge-yellow: #F59E0B;
+  --color-body: #555555;
+
+  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+
+  --animate-fade-in-up: fadeInUp 0.5s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
 }
 
 :root {
   --background: #FFFFFF;
   --foreground: #171717;
+  --primary-gradient: linear-gradient(180deg, #FFFFFF 0%, #F8F9FF 100%);
+}
+
+[data-theme='dark'] {
+  --background: #0A0A0F;
+  --foreground: #EDEDED;
+  --color-background: #0A0A0F;
+  --color-background-secondary: #13131F;
+  --color-heading: #FFFFFF;
+  --color-body: #A1A1AA;
+  --primary-gradient: linear-gradient(180deg, #0A0A0F 0%, #13131F 100%);
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-body);
+  background: var(--primary-gradient);
+  color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Noise Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.4;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+[data-theme='dark'] .glass-panel {
+  background: rgba(10, 10, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
