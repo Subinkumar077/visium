@@ -25,7 +25,7 @@ export async function POST(request: Request) {
         const seed = Math.floor(Math.random() * 1000000);
         const pollinationsUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(enhancedPrompt)}?width=${width}&height=${height}&seed=${seed}&nologo=true&model=flux`;
 
-        console.log("Generating with Pollinations:", pollinationsUrl);
+
 
         const response = await fetch(pollinationsUrl);
 
