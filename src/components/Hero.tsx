@@ -79,7 +79,7 @@ export default function Hero() {
                     <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-gray-900 aspect-[16/9]">
                         <div className="absolute inset-0 bg-gray-900">
                             <Image
-                                src="/images/cyberpunk-city.jpg"
+                                src="/images/Gemini_Generated_Image_mzgyxymzgyxymzgy.png"
                                 alt="Futuristic cyberpunk city with flying cars"
                                 fill
                                 className="object-cover opacity-90"
